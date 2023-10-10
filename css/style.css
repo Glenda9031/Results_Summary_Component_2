@@ -84,6 +84,14 @@ body {
     }
 }
 
+.flex-group {
+    display: flex;
+/*    justify-content: space-between;*/
+    align-items: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
 .grid-flow {
     display: grid;
     align-content: start;
@@ -125,7 +133,7 @@ body {
     .result-summary {
         margin-inline: 1rem;
         grid-template-columns: 1fr 1fr;
-        border-radius: 2rem;
+        border-radius: var(--border-radius);
         overflow: hidden;
         box-shadow: .5rem 1rem 3rem hsl(var(--clr-neutral-hsl-700), .2);
     }
@@ -134,6 +142,7 @@ body {
 .results {
     color: hsl(var(--clr-neutral-hsl-100), .7);
     text-align: center;
+    padding: var(--padding) calc(var(--padding) * 1.5);
     background: var(--gradient-primary);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
@@ -146,6 +155,7 @@ body {
 
 .result-score {
     display: grid;
+    place-content: center;
     width: 12rem;
     margin-inline: auto;
     background: var(--gradient-to-transparent);
@@ -159,4 +169,58 @@ body {
     font-weight: var(--fw-black);
     line-height: 1;
     color: var(--clr-neutral-100);
+}
+
+.result-rank {
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-700);
+    font-weight: var(--fw-bold);
+}
+
+.summary {
+    padding: var(--padding);
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: hsl(var(--item-color), .1);
+}
+
+.summary-item img {
+    color: hsl(var(--item-color));
+}
+
+.summary-item-title {
+    font-weight: var(--fw-bold);
+    color: hsl(var(--item-color));
+}
+
+.summary-item[data-item-type="accent-1"] {
+    --item-color: var(--clr-accent-1);
+}
+
+.summary-item[data-item-type="accent-2"] {
+    --item-color: var(--clr-accent-2);
+}
+
+.summary-item[data-item-type="accent-3"] {
+    --item-color: var(--clr-accent-3);
+}
+
+.summary-item[data-item-type="accent-4"] {
+    --item-color: var(--clr-accent-4);
+}
+
+.summary-score {
+    font-weight: var(--fw-black);
+    color: hsl(var(--clr-neutral-hsl-700), .5)
+}
+
+.summary-score span {
+    color: var(--clr-neutral-700);
 }
